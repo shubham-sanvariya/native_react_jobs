@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,Image } from 'react-native';
 
 import styles from './welcome.style';
 import { icons, SIZES } from '../../../constants';
 import { useRouter } from 'expo-router';
 import { TextInput } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-web';
 
 const Welcome = () => {
 
@@ -19,8 +20,23 @@ const Welcome = () => {
 
             <View style={styles.searchContainer}>
                 <View style={styles.searchWrapper}>
-                    <TextInput style={styles.searchInput}/>
+                    <TextInput
+                     style={styles.searchInput}
+                     value=""
+                     onChange={() => {}}
+                     placeholder="What are you looking for?"
+                     />
                 </View>
+                <TouchableOpacity
+                 style={styles.searchBtn}
+                 onPress={() => {}}
+                 >
+                    <Image
+                        source={icons.search}
+                        resizeMode="contain"
+                        style={styles.searchBtnImage}
+                    />
+                </TouchableOpacity>
             </View>
         </View>
     );
