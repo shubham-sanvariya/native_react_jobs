@@ -2,6 +2,7 @@ import { Stack, useRouter } from "expo-router";
 import { View, ScrollView, SafeAreaView } from "react-native";
 import { COLORS, icons, images, SIZES } from '../constants';
 import ScreenHeaderBtn from "../components/common/header/ScreenHeaderBtn";
+import Welcome from "../components/home/welcome/Welcome";
 
 
 const Home = () => {
@@ -32,9 +33,9 @@ const Home = () => {
                         padding: SIZES.medium
                     }}
                 >
-                    {/* <Welcome
+                    <Welcome
 
-                    /> */}
+                    />
 
                     {/* <Popularjobs />
                     <Nearbyjobs /> */}
