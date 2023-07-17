@@ -8,6 +8,7 @@ import { useState } from "react";
 import Company from "../../components/jobDetails/company/Company";
 import ScreenHeaderBtn from "../../components/common/header/ScreenHeaderBtn";
 import JobTabs from "../../components/jobDetails/tabs/JobTabs";
+import Specifics from "../../components/jobDetails/specifics/Specifics";
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
@@ -24,7 +25,22 @@ const JobDetails = () => {
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
 
-    const onRefresh = () => {}
+    const onRefresh = () => {};
+
+    const displayTabContent = () => {
+        switch (activeTab) {
+            case "Qualifications":
+                return <Specifics
+                    title="Qualifications"
+                    points={data[0].job_highlights?.Qualifications ?? 'N/A'}
+                />
+            case "About":
+            case "Responsibilites":
+        
+            default:
+                break;
+        }
+    }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -75,6 +91,8 @@ const JobDetails = () => {
                             activeTab={activeTab}
                             setActiveTab={setActiveTab}
                         />
+
+                        {displayTabContent()}
                     </View>
                 )}
             </ScrollView>
