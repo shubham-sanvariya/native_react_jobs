@@ -4,6 +4,7 @@ import { COLORS, icons, images, SIZES } from '../constants';
 import ScreenHeaderBtn from "../components/common/header/ScreenHeaderBtn";
 import Welcome from "../components/home/welcome/Welcome";
 import Popularjobs from "../components/home/popular/Popularjobs";
+import NearbyJobs from "../components/home/nearby/NearbyJobs";
 
 
 const Home = () => {
@@ -39,7 +40,7 @@ const Home = () => {
                     />
 
                     <Popularjobs />
-                     {/* <Nearbyjobs />  */}
+                    <NearbyJobs /> 
                 </View>
             </ScrollView>
         </SafeAreaView>
